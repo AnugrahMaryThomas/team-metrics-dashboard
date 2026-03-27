@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Metrics Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Team Metrics Dashboard</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Case Trends</h2>
+                <canvas id="caseTrendsChart"></canvas>
+            </div>
+            <div class="col-md-6">
+                <h2>Closure Rates</h2>
+                <canvas id="closureRatesChart"></canvas>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Team Utilization</h2>
+                <canvas id="teamUtilizationChart"></canvas>
+            </div>
+            <div class="col-md-6">
+                <h2>SLA Performance</h2>
+                <canvas id="slaPerformanceChart"></canvas>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2>SecOps Metrics</h2>
+                <canvas id="secOpsMetricsChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Example data for charts
+        const ctxCaseTrends = document.getElementById('caseTrendsChart').getContext('2d');
+        const caseTrendsChart = new Chart(ctxCaseTrends, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March'],
+                datasets: [{
+                    label: 'Cases',
+                    data: [65, 59, 80],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    fill: false
+                }]
+            }
+        });
+
+        // Similarly, define other charts here (closureRatesChart, teamUtilizationChart, slaPerformanceChart, secOpsMetricsChart)
+    </script>
+</body>
+</html>
