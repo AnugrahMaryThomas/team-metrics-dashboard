@@ -3,47 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Team Metrics Dashboard</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Comprehensive Dashboard</h1>
+        <h1>Team Metrics Dashboard</h1>
     </header>
     <main>
-        <section id="case-trends">
-            <h2>Case Trends</h2>
-            <div id="case-trends-data">Loading...</div>
-        </section>
-        <section id="closure-rates">
-            <h2>Closure Rates</h2>
-            <div id="closure-rates-data">Loading...</div>
-        </section>
-        <section id="team-utilization">
-            <h2>Team Utilization</h2>
-            <div id="team-utilization-data">Loading...</div>
-        </section>
-        <section id="sla-performance">
-            <h2>SLA Performance</h2>
-            <div id="sla-performance-data">Loading...</div>
-        </section>
-        <section id="secOps-metrics">
-            <h2>SecOps Metrics</h2>
-            <div id="secOps-metrics-data">Loading...</div>
+        <section id="metrics">
+            <h2>Current Metrics</h2>
+            <div class="metric">
+                <h3>Performance</h3>
+                <p id="performance-data">Data Loading...</p>
+            </div>
+            <div class="metric">
+                <h3>Attendance</h3>
+                <p id="attendance-data">Data Loading...</p>
+            </div>
+            <div class="metric">
+                <h3>Tasks Completed</h3>
+                <p id="tasks-data">Data Loading...</p>
+            </div>
         </section>
     </main>
-    <script src="data.json"></script>
-    <script>
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('case-trends-data').innerText = JSON.stringify(data.caseTrends);
-                document.getElementById('closure-rates-data').innerText = JSON.stringify(data.closureRates);
-                document.getElementById('team-utilization-data').innerText = JSON.stringify(data.teamUtilization);
-                document.getElementById('sla-performance-data').innerText = JSON.stringify(data.slaPerformance);
-                document.getElementById('secOps-metrics-data').innerText = JSON.stringify(data.secOpsMetrics);
-            })
-            .catch(error => console.error('Error loading data:', error));
-    </script>
+    <footer>
+        <p>&copy; 2026 Team Metrics. All rights reserved.</p>
+    </footer>
 </body>
 </html>
